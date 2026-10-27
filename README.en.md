@@ -2,7 +2,7 @@
 
 **Website RemoteControl for small businesses.** A business enters its name and category and gets a finished, multilingual website in under a minute, which it then edits itself: texts, services and prices, photos, opening hours, contact details and appointment requests. No agency lead time, no setup fee, no developer for small changes.
 
-[![CI](https://github.com/IamRedi/businesssite-rc/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/IamRedi/businesssite-rc/actions/workflows/ci.yml)
+[![CI](https://github.com/IamRedi/businesssite/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/IamRedi/businesssite/actions/workflows/ci.yml)
 
 **[Deutsche Version](README.md)** · **As of 27 October 2026** · **[Project status](docs/PROJEKTSTAND.md)** · **[Verification record](EVIDENCE.md)**
 
