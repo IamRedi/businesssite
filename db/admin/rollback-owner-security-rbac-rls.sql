@@ -1,0 +1,42 @@
+-- Deploy an application version with DATABASE_RLS_MODE=off and owner routes
+-- disabled/compatibility-only before running this administrative rollback.
+-- Data, routines and schema_migrations are intentionally preserved.
+begin;
+revoke execute on function public.owner_auth_resolve_session(text,text) from bsrc_owner_ops;
+revoke execute on function public.owner_auth_login_lookup(text) from bsrc_owner_ops;
+revoke execute on function public.owner_auth_challenge_lookup(text) from bsrc_owner_ops;
+revoke execute on function public.owner_auth_record_audit(jsonb) from bsrc_owner_ops;
+revoke execute on function public.owner_auth_create_challenge(jsonb) from bsrc_owner_ops;
+revoke execute on function public.owner_auth_complete_enrollment(jsonb) from bsrc_owner_ops;
+revoke execute on function public.owner_auth_complete_verification(jsonb) from bsrc_owner_ops;
+revoke execute on function public.owner_auth_complete_recovery(jsonb) from bsrc_owner_ops;
+revoke execute on function public.owner_auth_revoke_session(text) from bsrc_owner_ops;
+revoke execute on function public.owner_auth_change_password(text,text,text,bigint) from bsrc_owner_ops;
+revoke execute on function public.owner_auth_regenerate_recovery_codes(text,text,bigint,text[]) from bsrc_owner_ops;
+revoke execute on function public.owner_team_list(text) from bsrc_owner_ops;
+revoke execute on function public.owner_invitation_list(text) from bsrc_owner_ops;
+revoke execute on function public.owner_invitation_lookup(text) from bsrc_owner_ops;
+revoke execute on function public.owner_invitation_create(text,text,bigint,text,text,text,timestamptz,text,text) from bsrc_owner_ops;
+revoke execute on function public.owner_invitation_resend(text,text,bigint,uuid,text,timestamptz,text) from bsrc_owner_ops;
+revoke execute on function public.owner_invitation_revoke(text,text,bigint,uuid,text) from bsrc_owner_ops;
+revoke execute on function public.owner_invitation_delivery(text,uuid,text) from bsrc_owner_ops;
+revoke execute on function public.owner_invitation_accept(jsonb) from bsrc_owner_ops;
+revoke execute on function public.owner_team_change(text,text,bigint,uuid,text,text,text) from bsrc_owner_ops;
+revoke execute on function public.owner_customer_list(text,integer,integer) from bsrc_owner_ops;
+revoke execute on function public.owner_usage_snapshot(text,text) from bsrc_owner_ops;
+revoke execute on function public.owner_usage_override(text,text,text,text,timestamptz,text) from bsrc_owner_ops;
+revoke execute on function public.owner_legal_configs(text) from bsrc_owner_ops;
+revoke execute on function public.owner_legal_documents(text) from bsrc_owner_ops;
+revoke execute on function public.owner_legal_acceptances(text) from bsrc_owner_ops;
+revoke execute on function public.owner_legal_create_config(text,text,bigint,jsonb,text) from bsrc_owner_ops;
+revoke execute on function public.owner_legal_activate_config(text,text,bigint,uuid,text) from bsrc_owner_ops;
+revoke execute on function public.owner_legal_register_document(text,text,bigint,text,text,text,text,text) from bsrc_owner_ops;
+revoke execute on function public.owner_legal_activate_document(text,text,bigint,uuid,text,text) from bsrc_owner_ops;
+revoke execute on function public.owner_legal_verify_business(text,text,bigint,uuid,text,text,text) from bsrc_owner_ops;
+alter table public.owner_accounts disable row level security;
+alter table public.owner_sessions disable row level security;
+alter table public.owner_auth_challenges disable row level security;
+alter table public.owner_mfa_recovery_codes disable row level security;
+alter table public.owner_invitations disable row level security;
+alter table public.owner_auth_audit_events disable row level security;
+commit;

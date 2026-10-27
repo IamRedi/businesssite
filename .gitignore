@@ -1,0 +1,20 @@
+node_modules/
+.next/
+dist/
+.env.local
+coverage/
+*.tsbuildinfo
+
+# Private customer pilot inputs, exports and optimized assets (never commit).
+apps/web/public/custom-site-private/
+.custom-site-private/
+
+.vercel
+.env*
+!.env.example
+
+# Design fixture generated artifacts (pages in _preview are tracked)
+apps/web/.design-fixtures/*
+!apps/web/.design-fixtures/_preview/
+
+# Raw visual-regression captures live outside source history (see evidence records)

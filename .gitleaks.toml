@@ -1,0 +1,11 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Synthetic test fixtures and lockfile integrity hashes"
+paths = [
+  '''package-lock\.json''',
+]
+regexes = [
+  '''vercel_blob_rw_1234567890ABCDEF_synthetic''',
+]

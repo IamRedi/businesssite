@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><title>diff</title></head><body>
+<script>
+// Pixel diff for before/after fixture captures (BSRC-DESIGN-FOUNDATION-001).
+// Loads /e/before/<name>.png and /e/after/<name>.png, compares per pixel with
+// a small channel tolerance for encoder noise, exposes window.__diffResults.
+(async () => {
+  const params = new URLSearchParams(location.search);
+  const names = params.get("names").split(",");
+  const beforeDir = params.get("beforeDir") ?? "before";
+  const afterDir = params.get("afterDir") ?? "after";
+  const beforePrefix = params.get("beforePrefix") ?? "/e/";
+  const afterPrefix = params.get("afterPrefix") ?? "/e/";
+  const TOLERANCE = 2;
+  const results = {};
+  for (const name of names) {
+    const entry = { name };
+    try {
+      const [before, after] = await Promise.all([beforeDir, afterDir].map(async (side) => {
+        const response = await fetch(`${(side === "before" ? beforePrefix : afterPrefix).replace(/\/$/, "")}/${name}.png`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`${side} missing (status ${response.status} url ${response.url})`);
+        return createImageBitmap(await response.blob());
+      }));
+      const width = Math.max(before.width, after.width);
+      const height = Math.max(before.height, after.height);
+      const draw = (bmp) => {
+        const canvas = new OffscreenCanvas(width, height);
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(bmp, 0, 0);
+        return ctx.getImageData(0, 0, width, height).data;
+      };
+      const [a, b] = [draw(before), draw(after)];
+      let diffPixels = 0;
+      let maxDelta = 0;
+      for (let i = 0; i < a.length; i += 4) {
+        const d = Math.max(Math.abs(a[i] - b[i]), Math.abs(a[i + 1] - b[i + 1]), Math.abs(a[i + 2] - b[i + 2]), Math.abs(a[i + 3] - b[i + 3]));
+        if (d > maxDelta) maxDelta = d;
+        if (d > TOLERANCE) diffPixels++;
+      }
+      Object.assign(entry, {
+        beforeWidth: before.width, beforeHeight: before.height,
+        afterWidth: after.width, afterHeight: after.height,
+        width, height, diffPixels, maxDelta, ok: true,
+      });
+    } catch (error) {
+      entry.ok = false;
+      entry.error = String(error && error.message ? error.message : error);
+    }
+    results[name] = entry;
+  }
+  window.__diffResults = results;
+  window.__diffDone = true;
+  document.title = "diff done";
+})();
+</script></body></html>

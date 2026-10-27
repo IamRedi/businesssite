@@ -1,0 +1,10 @@
+[
+  { "documentKey": "terms", "locale": "de", "version": "2026-08-24-b2b-draft-1", "contentHash": "53fcdfebd5369277b6a3d81069bfb06cbe50782b363f89be3126259efe333943" },
+  { "documentKey": "terms", "locale": "en", "version": "2026-08-24-b2b-draft-1", "contentHash": "5f1c1a16bda748fdb0612c502f06bcf0a02b67a9176d9f97972cd820805ca53e" },
+  { "documentKey": "privacy", "locale": "de", "version": "2026-08-24-art13-draft-1", "contentHash": "c4f17112c1f3982fe25fdbd636752cc9c01f4146b90a61775d492e9554859954" },
+  { "documentKey": "privacy", "locale": "en", "version": "2026-08-24-art13-draft-1", "contentHash": "b6c71a5fdd85c0510f5bfe8dd25ac767a2f2ee9bf16ad08c50b9c20c465a6292" },
+  { "documentKey": "imprint", "locale": "de", "version": "2026-08-24-ddg5-draft-1", "contentHash": "8a15f8bd9d23e97fcdf1d129f63ecebdb4c61c229e99a685c1f0465806e9a6b0" },
+  { "documentKey": "imprint", "locale": "en", "version": "2026-08-24-ddg5-draft-1", "contentHash": "1ec1869be6d2931efa0c93938f9ccb6f1269d3880377245d5167ab5bee1383eb" },
+  { "documentKey": "cancellation", "locale": "de", "version": "2026-08-24-b2b-cancel-draft-1", "contentHash": "37417dfa000156c0aad259df9902ab6de8fdd4982b46477918b55a6a3b51f6a5" },
+  { "documentKey": "cancellation", "locale": "en", "version": "2026-08-24-b2b-cancel-draft-1", "contentHash": "dc04eb8630bffd671e8aea2514443069217b3b733c2b43130918f0105220b74e" }
+]

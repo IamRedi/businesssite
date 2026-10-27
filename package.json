@@ -1,0 +1,68 @@
+{
+  "name": "white-label-platform",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Standalone white-label local-business discovery and website platform",
+  "author": "Redion Cekrezi",
+  "license": "SEE LICENSE IN LICENSE",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "npm run build --workspace=@platform/web",
+    "lint": "npm run lint --workspace=@platform/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspace=@platform/database && npm run test --workspace=@platform/website-engine && npm run test --workspace=@platform/ai-assistant && npm run test --workspace=@platform/social-control && npm run test --workspace=@platform/business-finder && npm run test --workspace=@platform/product-catalog && npm run test --workspace=@platform/site-data && npm run test --workspace=@platform/web",
+    "check:boundaries": "node scripts/check-boundaries.mjs",
+    "check:docs": "node scripts/check-doc-links.mjs",
+    "check:translations": "node scripts/check-translations.mjs",
+    "check:brand": "node --env-file-if-exists=.env.local scripts/brand-profile-check.mjs",
+    "check:brand-hardcoding": "node scripts/check-brand-hardcoding.mjs",
+    "check:sca": "npm audit --audit-level=moderate",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "migrate": "node --env-file-if-exists=.env.local scripts/migrate.mjs",
+    "migrate:status": "node --env-file-if-exists=.env.local scripts/migration-status.mjs",
+    "db:roles": "node --env-file-if-exists=.env.local scripts/provision-database-roles.mjs",
+    "test:rls": "node scripts/rls-pilot-test.mjs",
+    "test:rls-upgrade": "node scripts/rls-upgrade-test.mjs",
+    "check:rls-context": "node scripts/check-rls-context.mjs",
+    "check:rls-repositories": "node scripts/check-scoped-customer-repositories.mjs",
+    "check:database-boundaries": "node scripts/check-database-boundaries.mjs",
+    "check:privacy-policy": "node scripts/check-privacy-policy.mjs",
+    "check:privacy-export": "node scripts/check-privacy-export.mjs",
+    "check:customer-deletion": "node scripts/check-customer-deletion.mjs",
+    "check:provider-cleanup": "node scripts/check-provider-cleanup.mjs",
+    "check:production-operations": "node --test scripts/production-execution-gates.test.mjs && node scripts/check-production-operations.mjs && node scripts/check-production-cron.mjs",
+    "owner:bootstrap": "node --env-file-if-exists=.env.local scripts/owner-auth-admin.mjs bootstrap",
+    "owner:recover": "node --env-file-if-exists=.env.local scripts/owner-auth-admin.mjs recover",
+    "setup:check": "node --env-file-if-exists=.env.local scripts/setup-check.mjs",
+    "setup:secrets": "node scripts/prepare-local-secrets.mjs",
+    "smoke": "node --env-file-if-exists=.env.local scripts/smoke.mjs",
+    "preflight:release": "node --env-file-if-exists=.env.local scripts/release-preflight.mjs",
+    "load:check": "node scripts/load-check.mjs",
+    "acceptance:stripe-clock": "node --env-file-if-exists=.env.local scripts/stripe-clock-acceptance.mjs",
+    "acceptance:demo-expiry": "node --env-file-if-exists=.env.local scripts/demo-expiry-acceptance.mjs",
+    "recovery:postgres": "tsx scripts/postgres-recovery.ts",
+    "quality": "npm run typecheck && npm run lint && npm run check:lint-glob && npm run test && npm run check:rls-context && npm run check:rls-repositories && npm run check:database-boundaries && npm run check:privacy-policy && npm run check:privacy-export && npm run check:customer-deletion && npm run check:provider-cleanup && npm run check:production-operations && npm run check:recovery-process && npm run check:boundaries && npm run check:translations && npm run check:brand && npm run check:brand-hardcoding && npm run check:docs && npm run check:secrets && npm run check:sca && npm run build && node scripts/rls-suite-notice.mjs",
+    "check:recovery-process": "node --test scripts/recovery-process.test.mjs",
+    "check:lint-glob": "node --test scripts/lint-glob-contract.test.mjs"
+  },
+  "devDependencies": {
+    "pg": "^8.16.3",
+    "tsx": "^4.23.12",
+    "fast-glob": "file:tools/lint-glob-adapter"
+  },
+  "overrides": {
+    "@next/eslint-plugin-next": {
+      "fast-glob": "$fast-glob"
+    },
+    "@vercel/cli-config": {
+      "zod": "4.6.7"
+    }
+  }
+}

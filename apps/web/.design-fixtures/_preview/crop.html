@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><title>crop</title><style>body{margin:0;background:#555}canvas{display:block;margin:4px}</style></head><body>
+<script>
+(async () => {
+  const params = new URLSearchParams(location.search);
+  const name = params.get("name");
+  const stripSlash = (value, fallback) => (value ?? fallback).replace(//+$/, "");
+  const beforePrefix = stripSlash(params.get("beforePrefix"), "/x/before");
+  const afterPrefix = stripSlash(params.get("afterPrefix"), "/p3b/after-tmp");
+  const [x, y, w, h] = ["x", "y", "w", "h"].map((k) => Number(params.get(k)));
+  const scale = Number(params.get("scale") ?? "2");
+  for (const prefix of [beforePrefix, afterPrefix]) {
+    const response = await fetch(`${prefix}/${name}.png`, { cache: "no-store" });
+    if (!response.ok) { console.error(prefix, response.status); continue; }
+    const bmp = await createImageBitmap(await response.blob());
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.round(w * scale);
+    canvas.height = Math.round(h * scale);
+    const ctx = canvas.getContext("2d");
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(bmp, x, y, w, h, 0, 0, canvas.width, canvas.height);
+    document.body.appendChild(canvas);
+  }
+  document.title = "crop done";
+})();
+</script></body></html>

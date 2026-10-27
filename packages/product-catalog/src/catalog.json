@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "subscriptionLifecycle": {
+    "paymentGraceDays": 7,
+    "paidReadOnlyDays": 30,
+    "trialRecoveryDays": 30,
+    "maximumPaymentGraceDays": 30,
+    "maximumPaidReadOnlyDays": 180,
+    "maximumTrialRecoveryDays": 90
+  },
+  "plans": {
+    "starter": {
+      "publicNameConfigReference": "NEXT_PUBLIC_PLAN_STARTER_NAME",
+      "launchStatus": "active",
+      "readiness": "provider_configuration_required",
+      "supportedProviders": ["stripe"],
+      "trialPolicy": { "enabled": true, "defaultDays": 14, "maximumDays": 30 },
+      "promotionEligible": true,
+      "entitlements": ["website", "editor", "media", "ai_rewrite", "appointment_requests", "custom_domain_existing"],
+      "quotaPolicyKey": "starter"
+    },
+    "professional": {
+      "publicNameConfigReference": "NEXT_PUBLIC_PLAN_PROFESSIONAL_NAME",
+      "launchStatus": "coming_soon",
+      "readiness": "locally_verified",
+      "supportedProviders": ["stripe"],
+      "trialPolicy": { "enabled": false, "defaultDays": 0, "maximumDays": 0 },
+      "promotionEligible": false,
+      "entitlements": ["website", "editor", "media", "ai_rewrite", "appointment_requests", "custom_domain_existing"],
+      "quotaPolicyKey": "professional"
+    },
+    "premium": {
+      "publicNameConfigReference": "NEXT_PUBLIC_PLAN_PREMIUM_NAME",
+      "launchStatus": "coming_soon",
+      "readiness": "locally_verified",
+      "supportedProviders": ["stripe"],
+      "trialPolicy": { "enabled": false, "defaultDays": 0, "maximumDays": 0 },
+      "promotionEligible": false,
+      "entitlements": ["website", "editor", "media", "ai_rewrite", "appointment_requests", "custom_domain_existing"],
+      "quotaPolicyKey": "premium"
+    }
+  },
+  "capabilities": {
+    "website": { "launchStatus": "active", "readiness": "locally_verified", "trialEligible": true },
+    "editor": { "launchStatus": "active", "readiness": "locally_verified", "trialEligible": true },
+    "media": { "launchStatus": "active", "readiness": "provider_configuration_required", "trialEligible": true },
+    "ai_rewrite": { "launchStatus": "active", "readiness": "provider_configuration_required", "trialEligible": true },
+    "appointment_requests": { "launchStatus": "active", "readiness": "locally_verified", "trialEligible": true },
+    "booking_calendar": { "launchStatus": "coming_soon", "readiness": "provider_configuration_required", "trialEligible": false },
+    "custom_domain_existing": { "launchStatus": "active", "readiness": "provider_configuration_required", "trialEligible": false },
+    "domain_purchase": { "launchStatus": "coming_soon", "readiness": "provider_configuration_required", "trialEligible": false },
+    "social_media": { "launchStatus": "coming_soon", "readiness": "provider_configuration_required", "trialEligible": false },
+    "information_news": { "launchStatus": "internal", "readiness": "locally_verified", "trialEligible": false },
+    "advertising": { "launchStatus": "internal", "readiness": "locally_verified", "trialEligible": false },
+    "paddle_billing": { "launchStatus": "hidden", "readiness": "provider_configuration_required", "trialEligible": false }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "crons": [
+    {
+      "path": "/api/internal/cleanup-expired-demos",
+      "schedule": "0 3 * * *"
+    },
+    {
+      "path": "/api/internal/privacy-scheduler",
+      "schedule": "15 3 * * *"
+    }
+  ]
+}
