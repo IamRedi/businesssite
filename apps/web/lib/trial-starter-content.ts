@@ -105,16 +105,19 @@ const healthDescriptions: Partial<Record<TrialCategory, Record<Exclude<Supported
   },
 };
 
+const capitalize = (value: string) => value.charAt(0).toUpperCase() + value.slice(1);
+
 function localizedCategoryStarter(category: string, locale: Exclude<SupportedLocale, "sq">, templateKey?: string): RawStarterContent {
   const kind = categoryKind(category, templateKey);
   if (!kind) return generic[locale];
   const label = labels[locale][kind];
   const description: Record<Exclude<SupportedLocale, "sq">, string> = {
     en: `A local ${label} focused on thoughtful service, clear communication and a confident customer experience.`,
-    de: `Eine lokale ${label} mit persönlichem Service, klarer Kommunikation und einem überzeugenden Kundenerlebnis.`,
-    fr: `Un ${label} local attentif au service, à une communication claire et à une expérience client rassurante.`,
-    es: `Un ${label} local centrado en un servicio atento, una comunicación clara y una experiencia de cliente segura.`,
-    it: `Un’${label} locale attenta al servizio, alla comunicazione chiara e a un’esperienza cliente sicura.`,
+    // Gender-neutral phrasing: the label's grammatical gender varies by category.
+    de: `${label} vor Ort: persönlicher Service, klare Kommunikation und ein überzeugendes Kundenerlebnis.`,
+    fr: `${capitalize(label)} de proximité : service attentif, communication claire et expérience client rassurante.`,
+    es: `${capitalize(label)} de confianza en su zona: servicio atento, comunicación clara y una experiencia de cliente segura.`,
+    it: `${capitalize(label)} di zona: servizio attento, comunicazione chiara e un’esperienza cliente sicura.`,
   };
   const services: Partial<Record<TrialCategory, Record<Exclude<SupportedLocale, "sq">, string[]>>> = {
     "auto-repair": {

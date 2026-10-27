@@ -13,7 +13,7 @@
 | Status | Scope |
 |---|---|
 | **Implemented and in production** | Three-step self-service demo, website engine with category templates and themes, business admin (texts, services and prices, photos and videos, opening hours, contact, appointments), private preview links, legal-identity gate before publishing, platform admin with password plus TOTP and fixed roles, custom domains. The platform has run on its own server in Frankfurt since October 2026 and hosts the first own and friendly websites there. |
-| **Verified** | 1,368 automated tests passing locally (unit, integration against PostgreSQL 16, enforced row-level security with restricted roles), typecheck, lint, production build, gitleaks with no findings. Details in the [verification record](EVIDENCE.md). |
+| **Verified** | 1,371 automated tests passing locally (unit, integration against PostgreSQL 16, enforced row-level security with restricted roles), typecheck, lint, production build, gitleaks with no findings. Details in the [verification record](EVIDENCE.md). |
 | **Implemented, not active here** | Stripe checkout with grace and read-only phases, email via Resend, Google Places business discovery, AI import of an existing website and AI text improvement (OpenAI), media storage (Vercel Blob or S3/R2), news CMS for information sites. The code is tested; without keys these features stay off. |
 | **Open** | Commercial sale is not released: the legal texts (terms, privacy, DPA) await professional legal review. Safari/WebKit acceptance on real devices is incomplete. See [project status](docs/PROJEKTSTAND.md). |
 
@@ -23,7 +23,7 @@ All images come from a local production build with fictitious businesses. They a
 
 | 1. Enter name and category | 2. Finished website (desktop) |
 |---|---|
-| ![Website creation wizard](docs/assets/create-wizard.webp) | ![Generated website for the fictitious hair salon Haarstudio Elena](docs/assets/demo-site-salon.webp) |
+| ![Website creation wizard](docs/assets/create-wizard.webp) | ![Generated website for the fictitious hair salon Haarstudio Mira](docs/assets/demo-site-salon.webp) |
 
 | 3. Edit it yourself | Mobile | Another category |
 |---|---|---|
