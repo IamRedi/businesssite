@@ -19,7 +19,7 @@ Linux-Container, Node 22, PostgreSQL 16, gegen genau diesen Schnappschuss.
 |---|---|
 | TypeScript (`npm run typecheck`, alle Workspaces) | bestanden |
 | ESLint | bestanden, 0 Fehler, 2 Warnungen |
-| Unit- und Integrationstests (`npm test`, mit Datenbank) | **1.196 bestanden**, 2 übersprungen |
+| Unit- und Integrationstests (`npm test`, mit Datenbank) | **1.199 bestanden**, 2 übersprungen |
 | Durchgesetzte Row-Level Security (`npm run test:rls`, Wegwerf-Datenbank, eingeschränkte Rollen) | **172 bestanden** in 14 Dateien |
 | Upgrade-Erhalt 049 → 052 (`npm run test:rls-upgrade`) | bestanden |
 | Doku-Links (`npm run check:docs`) | bestanden |
@@ -34,7 +34,8 @@ Dieselben Schritte laufen in GitHub Actions (`.github/workflows/ci.yml`) auf `ub
 | Prüfung | Beobachtung |
 |---|---|
 | Durchgang im Browser (Playwright/Chromium, lokaler Produktionsbuild, 27.10.2026) | Drei fiktive Betriebe über den Assistenten angelegt (Haarstudio Elena, Autowerkstatt Brückner, Café Morgenrot): jeweils Website in wenigen Sekunden erzeugt, privater Vorschau-Link geöffnet, Business-Admin per Passwort betreten, Editor geöffnet. Screenshots in `docs/assets`, jedes Bild einzeln angesehen. |
-| Gefundene Anzeigefehler (nicht behoben, im privaten Repository zu klären) | Lange deutsche Firmennamen werden in der Industrie-Vorlage mitten im Wort umgebrochen („AUTOW / ERKSTA / TT“). Deutscher Standardtext „Eine lokale Friseursalon“ ist grammatisch falsch. Business-Admin bleibt Englisch, auch wenn die Website Deutsch ist. Für „Café“ gibt es keine eigene Vorlage; die neutrale Vorlage zeigt keinen Bildbereich und einen kontrastarmen Kontaktknopf. |
+| Gefundene Anzeigefehler (27.10.2026, behoben im zweiten Pull Request) | Lange deutsche Firmennamen wurden in der Hero-Überschrift mitten im Wort umgebrochen („AUTOW / ERKSTA / TT“), jetzt Silbentrennung nach Seitensprache („AUTO- / WERK- / STATT“). Der deutsche Standardtext „Eine lokale Friseursalon“ war grammatisch falsch; die Texte in DE/FR/ES/IT sind jetzt unabhängig vom Genus der Branche. Auf dunklen Paletten war der Kontaktknopf fast unsichtbar; der Knopf wählt jetzt automatisch eine Farbe mit ausreichendem Kontrast (3 neue Tests). Alle drei im Browser nachgeprüft, Screenshots ersetzt. |
+| Bewusst so, kein Fehler | Der Business-Admin folgt der Oberflächensprache des Besuchers (Cookie bzw. Browsersprache, EN oder DE), nicht der Sprache der erzeugten Website. Kleiner Rest: Der Knopf „Mit AI verbessern“ folgt der Website-Sprache und steht deshalb in einem englischen Admin auf Deutsch. Für „Café“ gibt es keine eigene Branchenvorlage; es wird die neutrale Vorlage ohne Bild verwendet. |
 | Schnellstart | Zwei Lücken in `docs/QUICK_START.md` gefunden und ergänzt: Die drei Rollen-URLs sind Pflicht, und `PUBLIC_APP_URL` muss zur Adresse im Browser passen, sonst lehnt der Same-Origin-Schutz den Login ab. |
 
 ## Was nicht geprüft ist

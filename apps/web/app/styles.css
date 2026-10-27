@@ -2368,8 +2368,8 @@ body[data-owner-theme="light"] .search-result-links a { background: rgba(29,29,3
   margin-top: 14px;
   padding: 13px 19px;
   border-radius: var(--ds-radius-pill);
-  background: var(--site-primary);
-  color: #fff;
+  background: var(--site-cta, var(--site-primary));
+  color: var(--site-cta-ink, #fff);
   font:
     800 var(--ds-type-cta) Inter,
     sans-serif;
@@ -5934,7 +5934,10 @@ body[data-owner-theme="light"] .search-result-links a { background: rgba(29,29,3
 
 /* Hero prominence policy: minimum visual area per promised prominence. */
 .generated-site[data-hero-prominence] h1 {
-  overflow-wrap: anywhere;
+  /* Long compound names (e.g. German) hyphenate at syllables via the page
+     language; break-word only splits a word that still cannot fit. */
+  overflow-wrap: break-word;
+  hyphens: auto;
   text-wrap: balance;
 }
 .generated-site[data-hero-prominence="immersive"] .ib-hero,

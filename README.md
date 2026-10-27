@@ -13,7 +13,7 @@
 | Status | Umfang |
 |---|---|
 | **Umgesetzt und in Produktion** | Self-Service-Demo in drei Schritten, Website-Engine mit Branchenvorlagen und Themes, Business-Admin (Texte, Leistungen und Preise, Fotos und Videos, Öffnungszeiten, Kontakt, Termine), private Vorschau-Links, Impressumspflicht vor Veröffentlichung, Plattform-Admin mit Passwort plus TOTP und festen Rollen, eigene Domains. Die Plattform läuft seit Oktober 2026 auf einem eigenen Server in Frankfurt und hostet dort die ersten eigenen und befreundeten Websites. |
-| **Verifiziert** | 1.368 automatisierte Tests lokal grün (Unit, Integration gegen PostgreSQL 16, durchgesetzte Row-Level Security mit eingeschränkten Rollen), Typecheck, Lint, Produktionsbuild, gitleaks ohne Funde. Details im [Prüfprotokoll](EVIDENCE.md). |
+| **Verifiziert** | 1.371 automatisierte Tests lokal grün (Unit, Integration gegen PostgreSQL 16, durchgesetzte Row-Level Security mit eingeschränkten Rollen), Typecheck, Lint, Produktionsbuild, gitleaks ohne Funde. Details im [Prüfprotokoll](EVIDENCE.md). |
 | **Umgesetzt, hier nicht aktiv** | Stripe-Checkout mit Kulanzzeit und Read-only-Phase, E-Mail über Resend, Google-Places-Suche nach Betrieben, KI-Import einer bestehenden Website und KI-Textverbesserung (OpenAI), Medienspeicher (Vercel Blob oder S3/R2), News-CMS für Informationsseiten. Der Code ist getestet; ohne Schlüssel bleiben diese Funktionen aus. |
 | **Offen** | Kommerzieller Verkauf ist nicht freigegeben: Die Rechtstexte (AGB, Datenschutz, AVV) warten auf anwaltliche Prüfung. Safari/WebKit-Abnahme auf echten Geräten ist unvollständig. Siehe [Projektstand](docs/PROJEKTSTAND.md). |
 
@@ -23,7 +23,7 @@ Alle Bilder stammen aus einem lokalen Produktionsbuild mit erfundenen Betrieben.
 
 | 1. Name und Branche eingeben | 2. Fertige Website (Desktop) |
 |---|---|
-| ![Assistent zum Anlegen einer Website](docs/assets/create-wizard.webp) | ![Generierte Website für den fiktiven Friseursalon Haarstudio Elena](docs/assets/demo-site-salon.webp) |
+| ![Assistent zum Anlegen einer Website](docs/assets/create-wizard.webp) | ![Generierte Website für den fiktiven Friseursalon Haarstudio Mira](docs/assets/demo-site-salon.webp) |
 
 | 3. Selbst bearbeiten | Mobil | Andere Branche |
 |---|---|---|
