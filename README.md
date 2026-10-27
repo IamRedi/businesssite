@@ -1,12 +1,14 @@
 # BusinessSite RC
 
-**Website RemoteControl für kleine Betriebe.** Ein Betrieb gibt Namen und Branche ein und hat in unter einer Minute eine fertige, mehrsprachige Website, die er danach selbst bearbeitet: Texte, Leistungen und Preise, Fotos, Öffnungszeiten, Kontakt und Terminanfragen. Kein Agentur-Vorlauf, keine Einrichtungsgebühr, keine Entwickler für kleine Änderungen.
+**Website RemoteControl für kleine Betriebe.** Ein Betrieb gibt Namen und Branche ein und hat in unter einer Minute eine fertige, mehrsprachige Website, die er danach selbst bearbeitet: Texte, Leistungen und Preise, Fotos, Öffnungszeiten, Kontakt und Terminanfragen. Kleinere Inhaltsänderungen lassen sich ohne erneuten Entwicklungsauftrag durchführen; Konditionen für einen künftigen kommerziellen Vertrieb werden hier nicht zugesagt.
 
 [![CI](https://github.com/IamRedi/businesssite/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/IamRedi/businesssite/actions/workflows/ci.yml)
 
 **[English version](README.en.md)** · **Stand: 27. Oktober 2026** · **[Projektstand](docs/PROJEKTSTAND.md)** · **[Prüfprotokoll](EVIDENCE.md)**
 
 ![Startseite von BusinessSite RC](docs/assets/landing.webp)
+
+> **Nachweisstand und Grenzen:** Bereinigter, lokal ausführbarer Quellstand zur technischen Bewertung. Der Website-Kern ist im Betrieb; ein kommerzieller Marktstart ist nicht freigegeben. Der Prüfbericht unterscheidet getestete Implementierung, aktivierte Dienste und offene Freigaben. [Prüfprotokoll](EVIDENCE.md).
 
 ## Was heute umgesetzt ist
 
