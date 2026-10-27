@@ -8,7 +8,6 @@
 
 ![Startseite von BusinessSite RC](docs/assets/landing.webp)
 
-
 > **Nachweisstand und Grenzen:** Bereinigter, lokal ausführbarer Quellstand zur technischen Bewertung. Der Website-Kern ist im Betrieb; ein kommerzieller Marktstart ist nicht freigegeben. Der Prüfbericht unterscheidet getestete Implementierung, aktivierte Dienste und offene Freigaben. [Prüfprotokoll](EVIDENCE.md).
 
 ## Was heute umgesetzt ist
