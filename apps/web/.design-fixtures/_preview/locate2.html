@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><title>locate</title></head><body>
+<script>
+(async () => {
+  const params = new URLSearchParams(location.search);
+  const name = params.get("name");
+  const beforePrefix = (params.get("beforePrefix") ?? "/e/before/").replace(/\/$/, "");
+  const afterPrefix = (params.get("afterPrefix") ?? "/e/after/").replace(/\/$/, "");
+  const draw = async (prefix) => {
+    const response = await fetch(`${prefix}/${name}.png`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`${prefix} status ${response.status}`);
+    const bmp = await createImageBitmap(await response.blob());
+    const canvas = new OffscreenCanvas(bmp.width, bmp.height);
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(bmp, 0, 0);
+    return { data: ctx.getImageData(0, 0, bmp.width, bmp.height).data, w: bmp.width, h: bmp.height };
+  };
+  const a = await draw(beforePrefix);
+  const b = await draw(afterPrefix);
+  let minX = 1e9, maxX = -1, minY = 1e9, maxY = -1, count = 0;
+  const rowHistogram = {};
+  for (let y = 0; y < a.h; y++) {
+    for (let x = 0; x < a.w; x++) {
+      const i = (y * a.w + x) * 4;
+      const d = Math.max(Math.abs(a.data[i] - b.data[i]), Math.abs(a.data[i + 1] - b.data[i + 1]), Math.abs(a.data[i + 2] - b.data[i + 2]));
+      if (d > 2) {
+        count++;
+        minX = Math.min(minX, x); maxX = Math.max(maxX, x);
+        minY = Math.min(minY, y); maxY = Math.max(maxY, y);
+        const band = Math.floor(y / 100) * 100;
+        rowHistogram[band] = (rowHistogram[band] ?? 0) + 1;
+      }
+    }
+  }
+  window.__locate = { name, count, box: { minX, maxX, minY, maxY }, rowHistogram };
+  window.__diffDone = true;
+  document.title = "locate done";
+})();
+</script></body></html>

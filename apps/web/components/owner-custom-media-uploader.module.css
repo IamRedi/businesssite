@@ -1,0 +1,6 @@
+.uploader { min-width: 0; margin: 18px 0; padding: 18px; border: 1px solid var(--line); border-radius: 12px; }
+.uploader legend { padding: 0 8px; font-weight: 700; }
+.controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 16px; }
+.controls label { display: grid; gap: 8px; min-width: 0; }
+.controls input, .controls select { width: 100%; min-width: 0; max-width: 100%; padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); font: inherit; }
+.controls input:disabled { opacity: .6; }

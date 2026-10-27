@@ -1,0 +1,13 @@
+import {readFileSync} from "node:fs";
+import {resolve} from "node:path";
+const root=resolve(import.meta.dirname,"..");
+const migration=readFileSync(resolve(root,"db/migrations/049_customer_deletion_workflow.sql"),"utf8");
+const repository=readFileSync(resolve(root,"packages/site-data/src/privacy.ts"),"utf8");
+const worker=readFileSync(resolve(root,"apps/web/app/api/internal/privacy-deletions/route.ts"),"utf8");
+const failures=[];
+for(const required of ["customer_deletion_workflows","privacy_provider_cleanup_items","force row level security","site_admin_request_customer_deletion","owner_review_customer_deletion","privacy_system_execute_customer_deletion","privacy_system_recover_customer_deletions","privacy_hold_applies","customer_deletion_lifecycle_reason"])if(!migration.includes(required))failures.push(`missing deletion contract: ${required}`);
+for(const provider of ["vercel_blob","vercel_domains","stripe","paddle","resend","openai","google","redi_control"])if(!migration.includes(`'${provider}'`))failures.push(`missing provider disposition: ${provider}`);
+if(/\bexecute\s+format\s*\(|\bdblink\b|https?:\/\//i.test(migration))failures.push("migration contains dynamic SQL or a network marker");
+if(!repository.includes('PRIVACY_DELETION_REQUESTS_ENABLED')||!repository.includes('PRIVACY_DELETION_EXECUTION_ENABLED')||!repository.includes('fake_deletion_provider_forbidden'))failures.push("default-off/fake-provider gate missing");
+if(!worker.includes('No production deletion provider is configured.')||!/privacyDeletionExecutionEnabled\(\)/.test(worker))failures.push("production worker fail-closed boundary missing");
+if(failures.length){console.error(`Customer deletion check failed:\n${failures.map(v=>`- ${v}`).join("\n")}`);process.exit(1);}console.log("Customer deletion static boundary passed (default-off; production blocked; Blob staging adapter verified separately).");

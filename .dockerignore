@@ -1,0 +1,12 @@
+.git
+**/node_modules
+**/.next
+**/.env*
+!**/.env.example
+**/.vercel
+**/.custom-site-private
+**/custom-site-private
+**/coverage
+**/*.log
+**/*.sql.gz
+**/*.dump

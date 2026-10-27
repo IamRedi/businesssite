@@ -1,0 +1,134 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Scan with gitleaks
+        run: |
+          curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz | tar -xz gitleaks
+          ./gitleaks detect --source . --config .gitleaks.toml --redact --verbose
+
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: platform
+          POSTGRES_PASSWORD: platform
+          POSTGRES_DB: platform
+        ports: ["5432:5432"]
+        options: >-
+          --cpus 1 --memory 1g --memory-swap 1g --pids-limit 256
+          --tmpfs /var/lib/postgresql/data:rw,nosuid,nodev,size=512m
+          --log-driver local --log-opt max-size=10m --log-opt max-file=3
+          --health-cmd "pg_isready -U platform -d platform"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      DATABASE_URL: postgresql://platform:platform@localhost:5432/platform
+      # Compatibility suites use only this job's disposable localhost fixture.
+      # Enforced role privileges are tested independently in the RLS jobs below.
+      DATABASE_OWNER_URL: postgresql://platform:platform@localhost:5432/platform
+      DATABASE_RUNTIME_URL: postgresql://platform:platform@localhost:5432/platform
+      DATABASE_SYSTEM_URL: postgresql://platform:platform@localhost:5432/platform
+      OWNER_AUTH_DESTRUCTIVE_TESTS: "true"
+      # These suites share a disposable database and intentionally truncate it.
+      # Vitest's environment override otherwise defeats --no-file-parallelism.
+      VITEST_MAX_WORKERS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run migrate
+      - run: npm run migrate:status
+      - run: npm run check:secrets
+      - run: npm run check:sca
+      - run: npm run quality
+
+  enforced-rls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: platform_admin
+          POSTGRES_PASSWORD: platform_test_only
+          POSTGRES_DB: platform_rls
+        ports: ["5432:5432"]
+        options: >-
+          --cpus 1 --memory 1g --memory-swap 1g --pids-limit 256
+          --tmpfs /var/lib/postgresql/data:rw,nosuid,nodev,size=512m
+          --log-driver local --log-opt max-size=10m --log-opt max-file=3
+          --health-cmd "pg_isready -U platform_admin -d platform_rls"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      MIGRATION_DATABASE_URL: postgresql://platform_admin:platform_test_only@localhost:5432/platform_rls
+      RLS_TEST_DISPOSABLE_DATABASE: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run check:rls-context
+      - run: npm run check:rls-repositories
+      - run: npm run check:database-boundaries
+      - run: npm run test:rls
+
+  rls-upgrade-preservation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: platform_admin
+          POSTGRES_PASSWORD: platform_test_only
+          POSTGRES_DB: platform_upgrade
+        ports: ["5432:5432"]
+        options: >-
+          --cpus 1 --memory 1g --memory-swap 1g --pids-limit 256
+          --tmpfs /var/lib/postgresql/data:rw,nosuid,nodev,size=512m
+          --log-driver local --log-opt max-size=10m --log-opt max-file=3
+          --health-cmd "pg_isready -U platform_admin -d platform_upgrade"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      MIGRATION_DATABASE_URL: postgresql://platform_admin:platform_test_only@localhost:5432/platform_upgrade
+      RLS_TEST_DISPOSABLE_DATABASE: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run test:rls-upgrade

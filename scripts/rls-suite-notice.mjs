@@ -1,0 +1,1 @@
+console.log("RLS verification note: the provider-independent quality gate does not run the dedicated 142-test PostgreSQL role suite through Task Group 4-B6A. Run `npm run test:rls` against a disposable PostgreSQL 16 admin URL; CI runs it in a separate job.");

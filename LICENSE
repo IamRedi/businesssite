@@ -1,0 +1,35 @@
+BusinessSite RC – Source-Available License
+
+Copyright (c) 2026 Redion Cekrezi. All rights reserved.
+
+This repository is published so that its source code can be read and
+evaluated, for example by prospective clients, licensees, employers and
+reviewers.
+
+You MAY:
+  - view and read the source code;
+  - clone or download it and run it locally for the sole purpose of
+    evaluating the software or the author's work.
+
+You MAY NOT, without a separate written license from the copyright holder:
+  - use the software, or any part of it, in production or for any
+    commercial purpose, including offering it as a hosted service or as a
+    white-label product;
+  - copy, modify, merge, publish, distribute, sublicense or sell copies of
+    the software or derivative works.
+
+Commercial (white-label) licenses are available on request; see
+docs/COMMERCIAL_MODEL.md. A commercial license is granted only by a signed
+agreement, never by access to this repository.
+
+Third-party components included in or required by this repository remain
+under their own licenses. The template images in apps/web/public/images are
+project assets covered by this license (see docs/ASSET_AND_LICENSE_AUDIT.md).
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM, OUT
+OF OR IN CONNECTION WITH THE SOFTWARE OR ITS USE.
+
+For licensing inquiries, contact the author via https://github.com/IamRedi.
