@@ -8,7 +8,6 @@
 
 ![BusinessSite RC landing page](docs/assets/landing.webp)
 
-
 > **Evidence and limitations:** Sanitised, locally runnable source snapshot for technical evaluation. The website core is in operation; a commercial launch has not been approved. The verification record distinguishes tested implementation, enabled services and pending approvals. [Verification record (German)](EVIDENCE.md).
 
 ## What exists today
