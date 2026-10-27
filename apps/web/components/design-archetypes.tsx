@@ -28,6 +28,30 @@ type Copy = ReturnType<typeof resolveSiteCopy>;
 
 /** Per-site icon assignment (P5-001): semantic mapping with uniqueness and a
  * neutral fallback family; null when the document does not opt into icons. */
+
+/* The primary call to action must stay visible on every palette: dark
+   palettes can carry a primary that is nearly the page colour. */
+function luminance(hex: string) {
+  const value = /^#([0-9a-f]{6})$/i.exec(hex.trim())?.[1];
+  if (!value) return null;
+  const [r, g, b] = [0, 2, 4].map((offset) => {
+    const channel = parseInt(value.slice(offset, offset + 2), 16) / 255;
+    return channel <= 0.03928 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+function contrast(a: string, b: string) {
+  const la = luminance(a), lb = luminance(b);
+  if (la === null || lb === null) return 21;
+  return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
+}
+export function ctaColors(theme: SiteDocument["theme"]): Record<string, string> {
+  if (contrast(theme.primary, theme.background) >= 3) return {};
+  const fill = contrast(theme.accent, theme.background) >= 3 ? theme.accent : theme.text;
+  const ink = contrast(fill, "#ffffff") >= contrast(fill, theme.background) ? "#ffffff" : theme.background;
+  return { "--site-cta": fill, "--site-cta-ink": ink };
+}
+
 function serviceIcons(site: SiteDocument, design: SiteDesign): ReturnType<typeof mapServiceIcon>[] | null {
   if (!design.iconStyle) return null;
   const taken = new Set<string>();
@@ -309,6 +333,7 @@ function IndustrialBoldSite({ site, design, privacyHref }: { site: SiteDocument;
     "--site-page": site.theme.background,
     "--site-surface": site.theme.surface,
     "--site-ink": site.theme.text,
+    ...ctaColors(site.theme),
   } as CSSProperties;
   const section = (id: SiteSectionId): ReactNode => {
     switch (id) {
@@ -445,6 +470,7 @@ function EditorialPremiumSite({ site, design, privacyHref }: { site: SiteDocumen
     "--site-page": site.theme.background,
     "--site-surface": site.theme.surface,
     "--site-ink": site.theme.text,
+    ...ctaColors(site.theme),
   } as CSSProperties;
   const testimonials = design.sectionOrder.includes("testimonials") && trustLines(site).length ? (
     <section className="ep-testimonials" id="testimonials">
@@ -614,6 +640,7 @@ function LocalServiceSite({ site, design, privacyHref }: { site: SiteDocument; d
     "--site-page": site.theme.background,
     "--site-surface": site.theme.surface,
     "--site-ink": site.theme.text,
+    ...ctaColors(site.theme),
   } as CSSProperties;
   const section = (id: SiteSectionId): ReactNode => {
     switch (id) {
