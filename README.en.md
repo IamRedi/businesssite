@@ -12,6 +12,10 @@
 
 The native presentation is published and verified in DE/EN/IT/SQ. [Publication receipt](docs/P2_PUBLICATION_20261105.md). Product limits and historical application evidence remain explicit.
 
+## Public legal pages · 5 November 2026
+
+InfoEsencë now has its own [imprint](https://infoesence.com/imprint?lang=en) and [privacy notice](https://infoesence.com/privacy?lang=en) in DE/EN/IT/SQ.172 dedicated local RLS tests, upgrade preservation and48 public Windows WebKit checks PASS. Clouvider remains active; the old unused Vercel installation is paused. Commercial release and physical Safari/product journeys remain separate. [Receipt](docs/P2_PUBLICATION_20261105.md).
+
 ## Website and languages · 5 November 2026
 
 The public presentation has dedicated URL editions in [German](https://www.businesssiterc.de/?lang=de), [English](https://www.businesssiterc.de/?lang=en), [Italian](https://www.businesssiterc.de/?lang=it) and [Albanian](https://www.businesssiterc.de/?lang=sq), including language access on phones. Registration, the business dashboard and reviewed legal documents retain their actual DE/EN contract, with an explicit handoff from the introduction.

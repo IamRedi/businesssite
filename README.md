@@ -12,6 +12,10 @@
 
 Die native Vorstellung ist in DE/EN/IT/SQ veröffentlicht und geprüft. [Veröffentlichungsnachweis](docs/P2_PUBLICATION_20261105.md). Produktgrenzen und historische Teststände bleiben ausdrücklich erhalten.
 
+## Rechtliche Website-Seiten · 5 November 2026
+
+InfoEsencë hat jetzt eigene [Impressums-](https://infoesence.com/imprint?lang=de) und [Datenschutzseiten](https://infoesence.com/privacy?lang=de) in DE/EN/IT/SQ.172 dedizierte lokale RLS-Tests, Upgrade-Erhaltung und48 öffentliche Windows-WebKit-Prüfungen PASS. Aktiver Betrieb bleibt auf Clouvider; die alte ungenutzte Vercel-Installation ist pausiert. Die kommerzielle Freigabe und echte Safari-/Produktabläufe bleiben getrennt. [Receipt](docs/P2_PUBLICATION_20261105.md).
+
 ## Website und Sprachen · 5. November 2026
 
 Die öffentliche Vorstellung bietet eigene URL-Ausgaben auf [Deutsch](https://www.businesssiterc.de/?lang=de), [Englisch](https://www.businesssiterc.de/?lang=en), [Italienisch](https://www.businesssiterc.de/?lang=it) und [Albanisch](https://www.businesssiterc.de/?lang=sq), einschließlich Sprachwahl am Handy. Registrierung, Business-Panel und geprüfte Rechtstexte behalten ihren tatsächlichen DE/EN-Vertrag; die Vorstellung kennzeichnet diesen Übergang.
