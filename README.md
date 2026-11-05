@@ -8,6 +8,16 @@
 
 ![Startseite von BusinessSite RC](docs/assets/landing.webp)
 
+## Website und Sprachen · 5. November 2026
+
+Die öffentliche Vorstellung bietet eigene URL-Ausgaben auf [Deutsch](https://www.businesssiterc.de/?lang=de), [Englisch](https://www.businesssiterc.de/?lang=en), [Italienisch](https://www.businesssiterc.de/?lang=it) und [Albanisch](https://www.businesssiterc.de/?lang=sq), einschließlich Sprachwahl am Handy. Registrierung, Business-Panel und geprüfte Rechtstexte behalten ihren tatsächlichen DE/EN-Vertrag; die Vorstellung kennzeichnet diesen Übergang.
+
+Die veröffentlichten Kunden-Websites [InfoEsencë](https://infoesence.com/about?lang=de) und [Mustafa Haziri](https://mhaziri.de/about?lang=de) erhalten eigene vier­sprachige Vorstellungen im jeweiligen bestehenden Markenstil. Artikel bleiben auf Albanisch; die ausführlichen Friseurleistungen und Preise bleiben auf Deutsch. Termine werden persönlich bestätigt. Die Vorstellung übersetzt oder verändert keine Kundendatensätze.
+
+Diese P2-Präsentation ist ein lokal geprüfter Kandidat. Der Anwendungscode dieses öffentlichen Snapshots und die historischen Testzahlen behalten ihren ursprünglichen Stand; die aktuelle private Anwendung wird dadurch nicht vollständig in dieses Repository kopiert. Veröffentlichung/Readback, kommerzielle Freigabe und echte WebKit-/Datenbankabnahme bleiben getrennte Nachweise.
+
+Nach wesentlichen Produktänderungen werden native Vorstellung, Portfolio-Karte und betroffene README/About-Texte im selben Arbeitszyklus abgeglichen. Interne Änderungen erhalten einen begründeten `NO_CONTENT_CHANGE`.
+
 ## Was heute umgesetzt ist
 
 | Status | Umfang |
@@ -77,3 +87,5 @@ Dies ist ein **öffentlicher Schnappschuss** des privat entwickelten Repositorys
 Source-available: Lesen und lokales Ausprobieren sind erlaubt, Einsatz und Weitergabe nicht. White-Label-Lizenzen gibt es auf Anfrage. Siehe [LICENSE](LICENSE) und [Lizenzmodell](docs/COMMERCIAL_MODEL.md).
 
 Entwickelt von **Redion Cekrezi** ([@IamRedi](https://github.com/IamRedi)).
+
+[by RediON](https://www.redioncekrezi.de/)

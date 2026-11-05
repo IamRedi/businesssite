@@ -8,6 +8,16 @@
 
 ![BusinessSite RC landing page](docs/assets/landing.webp)
 
+## Website and languages · 5 November 2026
+
+The public presentation has dedicated URL editions in [German](https://www.businesssiterc.de/?lang=de), [English](https://www.businesssiterc.de/?lang=en), [Italian](https://www.businesssiterc.de/?lang=it) and [Albanian](https://www.businesssiterc.de/?lang=sq), including language access on phones. Registration, the business dashboard and reviewed legal documents retain their actual DE/EN contract, with an explicit handoff from the introduction.
+
+Published customer sites [InfoEsencë](https://infoesence.com/about?lang=en) and [Mustafa Haziri](https://mhaziri.de/about?lang=en) receive four-language introductions in their existing native brand styles. Articles remain Albanian; detailed salon services and prices remain German. Appointment requests require personal confirmation. The introduction does not translate or modify customer records.
+
+This P2 presentation is a locally checked candidate. Application code in this public snapshot and its historical test counts retain their original dates; this is not a complete copy of the current private application. Publication/readback, commercial release and real WebKit/database acceptance remain separate evidence.
+
+After material product changes, reconcile the native introduction, portfolio card and affected README/About copy in the same delivery cycle. Record a justified `NO_CONTENT_CHANGE` for internal work.
+
 ## What exists today
 
 | Status | Scope |
