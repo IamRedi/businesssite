@@ -8,6 +8,20 @@
 
 ![BusinessSite RC landing page](docs/assets/landing.webp)
 
+## P2 online · 5 November 2026
+
+The native presentation is published and verified in DE/EN/IT/SQ. [Publication receipt](docs/P2_PUBLICATION_20261105.md). Product limits and historical application evidence remain explicit.
+
+## Website and languages · 5 November 2026
+
+The public presentation has dedicated URL editions in [German](https://www.businesssiterc.de/?lang=de), [English](https://www.businesssiterc.de/?lang=en), [Italian](https://www.businesssiterc.de/?lang=it) and [Albanian](https://www.businesssiterc.de/?lang=sq), including language access on phones. Registration, the business dashboard and reviewed legal documents retain their actual DE/EN contract, with an explicit handoff from the introduction.
+
+Published customer sites [InfoEsencë](https://infoesence.com/about?lang=en) and [Mustafa Haziri](https://mhaziri.de/about?lang=en) receive four-language introductions in their existing native brand styles. Articles remain Albanian; detailed salon services and prices remain German. Appointment requests require personal confirmation. The introduction does not translate or modify customer records.
+
+The P2 native presentations were published on the existing domains and anonymously verified on 5 November 2026. Application code and historical test counts in this public snapshot retain their original revisions. Presentation acceptance does not establish commercial, fiscal, legal or device acceptance.
+
+After material product changes, reconcile the native introduction, portfolio card and affected README/About copy in the same delivery cycle. Record a justified `NO_CONTENT_CHANGE` for internal work.
+
 ## What exists today
 
 | Status | Scope |
