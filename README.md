@@ -8,13 +8,17 @@
 
 ![Startseite von BusinessSite RC](docs/assets/landing.webp)
 
+## P2 online · 5. November 2026
+
+Die native Vorstellung ist in DE/EN/IT/SQ veröffentlicht und geprüft. [Veröffentlichungsnachweis](docs/P2_PUBLICATION_20261105.md). Produktgrenzen und historische Teststände bleiben ausdrücklich erhalten.
+
 ## Website und Sprachen · 5. November 2026
 
 Die öffentliche Vorstellung bietet eigene URL-Ausgaben auf [Deutsch](https://www.businesssiterc.de/?lang=de), [Englisch](https://www.businesssiterc.de/?lang=en), [Italienisch](https://www.businesssiterc.de/?lang=it) und [Albanisch](https://www.businesssiterc.de/?lang=sq), einschließlich Sprachwahl am Handy. Registrierung, Business-Panel und geprüfte Rechtstexte behalten ihren tatsächlichen DE/EN-Vertrag; die Vorstellung kennzeichnet diesen Übergang.
 
 Die veröffentlichten Kunden-Websites [InfoEsencë](https://infoesence.com/about?lang=de) und [Mustafa Haziri](https://mhaziri.de/about?lang=de) erhalten eigene vier­sprachige Vorstellungen im jeweiligen bestehenden Markenstil. Artikel bleiben auf Albanisch; die ausführlichen Friseurleistungen und Preise bleiben auf Deutsch. Termine werden persönlich bestätigt. Die Vorstellung übersetzt oder verändert keine Kundendatensätze.
 
-Diese P2-Präsentation ist ein lokal geprüfter Kandidat. Der Anwendungscode dieses öffentlichen Snapshots und die historischen Testzahlen behalten ihren ursprünglichen Stand; die aktuelle private Anwendung wird dadurch nicht vollständig in dieses Repository kopiert. Veröffentlichung/Readback, kommerzielle Freigabe und echte WebKit-/Datenbankabnahme bleiben getrennte Nachweise.
+Die P2-Vorstellungen wurden am 5. November 2026 auf den bestehenden Domains veröffentlicht und anonym geprüft. Der Anwendungscode und historische Testzahlen dieses öffentlichen Snapshots behalten ihre ursprünglichen Revisionen. Die aktuelle Präsentationsfreigabe ersetzt keine kommerzielle, Fiskal-, Geräte- oder Rechtsabnahme.
 
 Nach wesentlichen Produktänderungen werden native Vorstellung, Portfolio-Karte und betroffene README/About-Texte im selben Arbeitszyklus abgeglichen. Interne Änderungen erhalten einen begründeten `NO_CONTENT_CHANGE`.
 
