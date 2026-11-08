@@ -1,5 +1,13 @@
 # BusinessSite RC
 
+## Premium website and new logo online · 8 November 2026
+
+The new [BusinessSite RC website](https://www.businesssiterc.de/?lang=en) is published: a light design, website/remote-control logo and DE/EN/IT/SQ presentation. The landing page has no package prices or currency selector. “Create website” opens the existing form at the page end; registration remains DE/EN.
+
+Web-only release on the existing installation: mini-PC build and isolated drill, fresh verified backup, seven TLS hosts and retained rollback checked. Customer content, database and other applications unchanged. This verifies the public website, not complete commercial or device acceptance.
+
+![Published BusinessSite RC website with its new logo and fictional style preview](docs/assets/premium-website-20261108.jpg)
+
 **Website RemoteControl for small businesses.** A business enters its name and category and gets a finished, multilingual website in under a minute, which it then edits itself: texts, services and prices, photos, opening hours, contact details and appointment requests. No agency lead time, no setup fee, no developer for small changes.
 
 [![CI](https://github.com/IamRedi/businesssite/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/IamRedi/businesssite/actions/workflows/ci.yml)
