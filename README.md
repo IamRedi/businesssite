@@ -2,7 +2,7 @@
 
 ## Optionaler Glas-Renderer veröffentlicht · 15. November 2026
 
-Der veröffentlichte Webcode unterstützt jetzt eine optionale Glas-Oberfläche für individuelle Website-Kompositionen sowie Auto/Hell/Dunkel pro Website. Bestehende Kompositionen behalten ihre Darstellung, bis die Option ausdrücklich gespeichert wird. Die foto-basierte Salonfassung ist vorbereitet; ihre Aktivierung wartet noch auf die normale Owner-Anmeldung mit MFA. Ein neues Layout allein ist keine kommerzielle oder Gerätefreigabe.
+Der veröffentlichte Webcode unterstützt jetzt eine optionale Glas-Oberfläche für individuelle Website-Kompositionen sowie Auto/Hell/Dunkel pro Website. Bestehende Kompositionen behalten ihre Darstellung, bis die Option ausdrücklich gespeichert wird. Die foto-basierte Salonfassung ist nach normaler Owner-Anmeldung mit MFA veröffentlicht: keine Videoplayer, originale Fotos und Logo, unveränderte Preise, Öffnungszeiten und Kontaktdaten. Desktop, schmale Ansichten, Hell/Dunkel und natürlicher Footer wurden live geprüft. Ein neues Layout allein ist keine kommerzielle oder Gerätefreigabe.
 
 Die Veröffentlichung wurde mit lokalem Qualitätslauf, isoliertem Build-Drill, frischem geprüftem Backup und gehaltenem Web-Rollback abgesichert. Dieser öffentliche Code-Snapshot bleibt auf seinem unten genannten Stand; aktuelle Veröffentlichungsnotizen sind davon getrennt. Es werden keine Kundendaten oder privaten Aufnahmen ergänzt.
 
