@@ -1,5 +1,11 @@
 # BusinessSite RC
 
+## Optional glass renderer published · 15 November 2026
+
+The released web code now supports an optional glass surface for custom website compositions and per-site Auto/Light/Dark appearance. Existing compositions keep their presentation until the option is explicitly saved. The photo-based salon version is published following normal Owner sign-in with MFA: no video players, original photos and logo, and unchanged prices, hours and contact details. Desktop, narrow views, light/dark appearance and the natural footer were checked live. Layout changes do not establish commercial or device acceptance.
+
+The release used local quality checks, an isolated build drill, a fresh verified backup and retained web rollback. This public code snapshot retains its stated historical revision; current release notes are separate. No customer data or private captures are added.
+
 ## Premium website and new logo online · 8 November 2026
 
 The new [BusinessSite RC website](https://www.businesssiterc.de/?lang=en) is published: a light design, website/remote-control logo and DE/EN/IT/SQ presentation. The landing page has no package prices or currency selector. “Create website” opens the existing form at the page end; registration remains DE/EN.

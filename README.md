@@ -1,5 +1,11 @@
 # BusinessSite RC
 
+## Optionaler Glas-Renderer veröffentlicht · 15. November 2026
+
+Der veröffentlichte Webcode unterstützt jetzt eine optionale Glas-Oberfläche für individuelle Website-Kompositionen sowie Auto/Hell/Dunkel pro Website. Bestehende Kompositionen behalten ihre Darstellung, bis die Option ausdrücklich gespeichert wird. Die foto-basierte Salonfassung ist nach normaler Owner-Anmeldung mit MFA veröffentlicht: keine Videoplayer, originale Fotos und Logo, unveränderte Preise, Öffnungszeiten und Kontaktdaten. Desktop, schmale Ansichten, Hell/Dunkel und natürlicher Footer wurden live geprüft. Ein neues Layout allein ist keine kommerzielle oder Gerätefreigabe.
+
+Die Veröffentlichung wurde mit lokalem Qualitätslauf, isoliertem Build-Drill, frischem geprüftem Backup und gehaltenem Web-Rollback abgesichert. Dieser öffentliche Code-Snapshot bleibt auf seinem unten genannten Stand; aktuelle Veröffentlichungsnotizen sind davon getrennt. Es werden keine Kundendaten oder privaten Aufnahmen ergänzt.
+
 ## Premium-Website und neues Logo online · 8. November 2026
 
 Die neue [BusinessSite-RC-Website](https://www.businesssiterc.de/) ist veröffentlicht: helles Design, Website-/Remote-Control-Logo und Vorstellung in DE/EN/IT/SQ. Die Startseite zeigt keine Paketpreise oder Währungsauswahl. „Website erstellen“ öffnet das bestehende Formular am Seitenende; die Registrierung bleibt DE/EN.
